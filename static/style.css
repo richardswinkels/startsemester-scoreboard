@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Pixel', sans-serif;
+}
+
+body {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+    color: #0202de;
+    margin: 20px;
+}
+
+.scoreboard-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.scoreboard-table {
+    margin: auto;
+    table-layout: fixed;
+    background-color: #a5a5a5;
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-bottom: 50px;
+}
+
+.scoreboard-table th {
+    color: #0202de;
+    padding: 10px 20px 25px 20px;
+}
+
+.scoreboard-table td {
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 20px 25px 20px;
+}
+
+.sortable {
+    cursor: pointer;
+    position: relative;
+}
+
+.sorted-asc::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #0202de; /* Triangle points up */
+    position: absolute;
+    right: -5px;  /* Move the triangle to the right of the text */
+    top: 40%;      /* Align vertically with the middle of the column text */
+    transform: translateY(-40%);  /* Center the triangle vertically */
+}
+
+.sorted-desc::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #0202de;  /* Adjust color if needed */
+    position: absolute;
+    right: -5px;  /* Position the triangle to the right of the text */
+    top: 40%;
+    transform: translateY(-40%);
+}
+
+.player-form {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+}
+
+.player-form label {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.player-form .errors {
+    color: #ff0000;
+    margin-bottom: 12px;
+    font-size: 12px;
+    list-style-type: none;
+}
+
+.player-form input {
+    text-align: center;
+    font-size: 30px;
+    padding: 15px 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    width: 100%;
+    max-width: 425px;
+    display: block;
+}
+
+.player-form button {
+    background-color: #0202de;
+    width: 125px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.player-form button:hover {
+    background-color: #0303bf;
+}

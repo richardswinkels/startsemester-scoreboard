@@ -1,6 +1,5 @@
 import os
 from models.db import db
-from werkzeug.middleware.proxy_fix import ProxyFix
 from controllers.player_controller import player_controller
 from controllers.score_controller import score_controller
 from controllers.api_score_controller import api_score_controller

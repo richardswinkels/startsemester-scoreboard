@@ -1,5 +1,6 @@
 import os
 from models.db import db
+from werkzeug.middleware.proxy_fix import ProxyFix
 from controllers.player_controller import player_controller
 from controllers.score_controller import score_controller
 from controllers.api_score_controller import api_score_controller
@@ -23,6 +24,10 @@ def create_app():
     app.register_blueprint(player_controller)
     app.register_blueprint(score_controller)
     app.register_blueprint(api_score_controller)
+
+    app.wsgi_app = ProxyFix(
+        app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1
+    )
 
     return app
 
